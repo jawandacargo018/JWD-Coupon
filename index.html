@@ -170,14 +170,10 @@
       font-weight: 700;
       font-size: 12px;
       color: #fff;
+      background: transparent;
       overflow: hidden;
       white-space: nowrap;
     }
-    .fail-section table { table-layout: fixed; width: 100%; }
-    .fail-section .tbl-wrap { border-color: #f5c6c6; }
-
-    .pass-section thead th { background: #1e7a28; }
-    .fail-section thead th { background: #fff; color: #333; font-size: 13px; font-weight: 800; border-bottom: 2px solid #f5c6c6; }
     thead th.r { text-align: right; }
 
     tbody tr { border-bottom: 1px solid #f0f5f0; }
@@ -507,15 +503,15 @@
   <div class="section pass-section" id="pass-section">
     <div class="section-hdr pass-hdr">✅ ผ่านเกณฑ์ — รับคูปองได้ (Sum Total ≥ 4,900 บาท)</div>
     <div class="tbl-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th style="width:36px"></th>
-            <th>Customer ID</th>
-            <th class="r" style="width:130px">Total Import</th>
-            <th class="r" style="width:130px">Sum Total</th>
-            <th style="width:185px">สถานะคูปอง</th>
-            <th style="width:145px">👤 ผู้อัพเดท</th>
+      <table style="width:100%;table-layout:fixed;border-collapse:collapse;">
+        <thead style="background:linear-gradient(90deg,#145c1f,#1e7a28,#27a535);">
+          <tr style="background:transparent;">
+            <th style="width:36px;padding:9px 12px;text-align:left;font-size:13px;font-weight:800;color:#fff;background:transparent;border:none;overflow:hidden;white-space:nowrap;"></th>
+            <th style="padding:9px 12px;text-align:left;font-size:13px;font-weight:800;color:#fff;background:transparent;border:none;overflow:hidden;white-space:nowrap;">Customer ID</th>
+            <th style="width:130px;padding:9px 12px;text-align:right;font-size:13px;font-weight:800;color:#fff;background:transparent;border:none;overflow:hidden;white-space:nowrap;">Total Import</th>
+            <th style="width:130px;padding:9px 12px;text-align:right;font-size:13px;font-weight:800;color:#fff;background:transparent;border:none;overflow:hidden;white-space:nowrap;">Sum Total</th>
+            <th style="width:185px;padding:9px 12px;text-align:left;font-size:13px;font-weight:800;color:#fff;background:transparent;border:none;overflow:hidden;white-space:nowrap;">สถานะคูปอง</th>
+            <th style="width:145px;padding:9px 12px;text-align:left;font-size:13px;font-weight:800;color:#fff;background:transparent;border:none;overflow:hidden;white-space:nowrap;">👤 ผู้อัพเดท</th>
           </tr>
         </thead>
         <tbody id="pass-body"></tbody>
@@ -527,15 +523,15 @@
   <!-- ❌ Fail Section -->
   <div class="section fail-section" id="fail-section" style="display:none;">
     <div class="section-hdr fail-hdr">❌ ยังไม่ผ่านเกณฑ์ — ยอดรวมไม่ถึง 4,900 บาท</div>
-    <div class="tbl-wrap">
-      <table>
+    <div class="tbl-wrap" style="border-color:#f5c6c6;">
+      <table style="width:100%;table-layout:fixed;border-collapse:collapse;">
         <thead>
           <tr>
-            <th style="width:36px"></th>
-            <th>Customer ID</th>
-            <th class="r" style="width:140px">Total Import</th>
-            <th class="r" style="width:140px">Sum Total</th>
-            <th style="width:235px">🎯 ขาดอีกกี่บาทถึงเกณฑ์</th>
+            <th style="width:36px;padding:9px 12px;text-align:left;font-size:13px;font-weight:800;color:#b71c1c;background:#fff;border:none;border-bottom:none;overflow:hidden;white-space:nowrap;"></th>
+            <th style="padding:9px 12px;text-align:left;font-size:13px;font-weight:800;color:#b71c1c;background:#fff;border:none;border-bottom:none;overflow:hidden;white-space:nowrap;">Customer ID</th>
+            <th style="width:140px;padding:9px 12px;text-align:right;font-size:13px;font-weight:800;color:#b71c1c;background:#fff;border:none;border-bottom:none;overflow:hidden;white-space:nowrap;">Total Import</th>
+            <th style="width:140px;padding:9px 12px;text-align:right;font-size:13px;font-weight:800;color:#b71c1c;background:#fff;border:none;border-bottom:none;overflow:hidden;white-space:nowrap;">Sum Total</th>
+            <th style="width:235px;padding:9px 12px;text-align:left;font-size:13px;font-weight:800;color:#b71c1c;background:#fff;border:none;border-bottom:none;overflow:hidden;white-space:nowrap;">🎯 ขาดอีกกี่บาทถึงเกณฑ์</th>
           </tr>
         </thead>
         <tbody id="fail-body"></tbody>
@@ -657,7 +653,7 @@
 
 <script>
 // ── Config ──
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxAIJ1a4Wsnq_VM-DNS1ws_UHOKQZFdB-c2Xbt3GOuVE8OidZjpEIl_AfvUo7zMBywAPg/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxnb_gYk1c2xVvoX40N1Bd6DV9diH_rjf6pkGHnFhKpFV65oHH5mIKV7rIBnUffW1Cybg/exec";
 
 // ── Mock data (replace with real Sheets fetch) ──
 const RAW_DATA = [
@@ -742,12 +738,15 @@ function renderSection(groups, bodyId, pgId, page, pgSetter) {
   const slice  = groups.slice((page - 1) * PER_PAGE, page * PER_PAGE);
 
   let html = "";
-  slice.forEach(g => {
+  slice.forEach((g, idx) => {
     const rid   = g.cusId.replace(/\//g, "_").replace(/\s/g, "");
     const isExp = !!expanded[rid];
     const adminClass = g.updatedBy === "Sirirwan" ? "a-sirirwan" : g.updatedBy === "Kanis" ? "a-kanis" : "a-none";
+    const rowBg = isPass
+      ? (idx % 2 === 0 ? "#fff" : "#f0faf0")
+      : (idx % 2 === 0 ? "#fff" : "#fff5f5");
 
-    html += `<tr>
+    html += `<tr style="background:${rowBg};">
       <td><button class="expand-btn" onclick="toggleExpand('${rid}')">${isExp ? "▼" : "▶"}</button></td>
       <td><span class="cus-id">${g.cusId}</span><span class="bill-count">(${g.bills.length} บิล)</span></td>
       <td class="r">${fmt(g.totalImport)}</td>
@@ -1036,17 +1035,18 @@ function syncData() {
   fetch(APPS_SCRIPT_URL + "?action=getInvoices")
     .then(r => r.json())
     .then(res => {
-      if (res.data && res.data.length > 0) {
-        allGroups = groupData(res.data);
+      const rows = res.invoices || res.data || [];
+      if (rows.length > 0) {
+        allGroups = groupData(rows);
         expanded  = {};
         render();
-        showToast("✅ Sync สำเร็จ " + res.data.length + " รายการ");
+        showToast("✅ Sync สำเร็จ " + rows.length + " รายการ");
       } else {
         showToast("⚠️ ไม่พบข้อมูลจาก Sheets");
       }
     })
     .catch(() => {
-      showToast("📋 โหมด Mock — เชื่อมต่อ Sheets จริงเมื่อ Deploy");
+      showToast("❌ เชื่อมต่อ Sheets ไม่ได้ — ตรวจสอบ Apps Script URL");
     });
 }
 
