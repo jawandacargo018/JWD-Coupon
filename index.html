@@ -74,7 +74,7 @@
     }
     .sync-btn:hover { background: #fff3e0; }
 
-    /* ── Main 2 tabs (ผ่านเกณฑ์ / ไม่ผ่าน) ── */
+    /* ── Main 2 tabs ── */
     .main-tab-row {
       display: flex;
       background: #fff;
@@ -83,7 +83,6 @@
       margin: 0 auto;
       width: 100%;
     }
-    /* wrapper to center main-tab-row itself */
     .main-tab-outer {
       background: #fff;
       border-bottom: 2px solid #e0eee0;
@@ -145,13 +144,8 @@
       align-items: center;
       gap: 8px;
     }
-    .section-hdr.pass-hdr {
-      background: linear-gradient(90deg, #0f4d18, #1e7a28, #2da83c);
-    }
-    .section-hdr.fail-hdr {
-      background: linear-gradient(90deg, #5a0a0a, #8b1a1a, #b82828);
-      color: #fff;
-    }
+    .section-hdr.pass-hdr { background: linear-gradient(90deg, #0f4d18, #1e7a28, #2da83c); }
+    .section-hdr.fail-hdr { background: linear-gradient(90deg, #5a0a0a, #8b1a1a, #b82828); color: #fff; }
 
     /* ── Table ── */
     .tbl-wrap {
@@ -175,113 +169,38 @@
       white-space: nowrap;
     }
     thead th.r { text-align: right; }
-
     tbody tr { border-bottom: 1px solid #f0f5f0; }
     tbody tr:hover { background: #f0faf0; }
     td { padding: 9px 12px; vertical-align: middle; }
     td.r { text-align: right; }
-
     .cus-id { font-weight: 700; color: #1a5c2a; font-size: 13px; }
     .bill-count { font-size: 11px; color: #888; margin-left: 5px; }
     .sum-val { font-weight: 700; }
-
-    /* expand button */
-    .expand-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 13px;
-      color: #1565c0;
-      font-weight: 700;
-      padding: 2px 4px;
-    }
-
-    /* sub rows */
+    .expand-btn { background: none; border: none; cursor: pointer; font-size: 13px; color: #1565c0; font-weight: 700; padding: 2px 4px; }
     .sub-row { background: #f8fcf8; border-left: 3px solid #2da83c; display: none; }
     .sub-row.show { display: table-row; }
     .sub-row td { padding: 6px 12px; font-size: 12px; color: #555; }
     .sub-row td.r { text-align: right; }
-
-    /* status dropdown */
-    select.status-sel {
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      padding: 5px 8px;
-      font-size: 12px;
-      font-weight: 700;
-      background: #fff;
-      cursor: pointer;
-      min-width: 160px;
-    }
+    select.status-sel { border: 1px solid #ccc; border-radius: 6px; padding: 5px 8px; font-size: 12px; font-weight: 700; background: #fff; cursor: pointer; min-width: 160px; }
     select.status-sel.s-wait { color: #e65100; }
     select.status-sel.s-sent { color: #6a1b9a; }
     select.status-sel.s-done { color: #1b5e20; }
     select.status-sel.s-none { color: #888; }
-
-    /* admin dropdown */
-    select.admin-sel {
-      border: 1px solid #d0e4ff;
-      border-radius: 20px;
-      padding: 4px 10px;
-      font-size: 12px;
-      font-weight: 700;
-      background: #f0f7ff;
-      color: #1565c0;
-      cursor: pointer;
-      min-width: 110px;
-    }
+    select.admin-sel { border: 1px solid #d0e4ff; border-radius: 20px; padding: 4px 10px; font-size: 12px; font-weight: 700; background: #f0f7ff; color: #1565c0; cursor: pointer; min-width: 110px; }
     select.admin-sel:focus { outline: none; border-color: #1565c0; }
     select.admin-sel.a-sirirwan { background: #fce4ec; color: #880e4f; border-color: #f8bbd0; }
     select.admin-sel.a-kanis    { background: #e8f5e9; color: #1b5e20; border-color: #c8e6c9; }
     select.admin-sel.a-none     { background: #f0f7ff; color: #90a4ae; border-color: #d0e4ff; }
-
-    /* pagination */
-    .pagination {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 4px 12px;
-      font-size: 13px;
-      max-width: 1160px;
-      margin: 0 auto;
-    }
-    .pg-btn {
-      padding: 5px 14px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      background: #fff;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 13px;
-    }
+    .pagination { display: flex; align-items: center; gap: 10px; padding: 8px 4px 12px; font-size: 13px; max-width: 1160px; margin: 0 auto; }
+    .pg-btn { padding: 5px 14px; border-radius: 6px; border: 1px solid #ccc; background: #fff; cursor: pointer; font-weight: 700; font-size: 13px; }
     .pg-btn:disabled { opacity: .35; cursor: not-allowed; }
     .pg-info { color: #666; }
 
     /* ── Guide ── */
     #view-guide { display: none; padding: 16px 20px; }
-    .guide-box {
-      background: #fff;
-      border: 1px solid #c8ddc8;
-      border-radius: 10px;
-      padding: 16px;
-    }
-    .guide-tabs {
-      display: flex;
-      gap: 6px;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
-    }
-    .guide-tab {
-      padding: 6px 14px;
-      border-radius: 6px;
-      font-size: 12px;
-      font-weight: 700;
-      border: none;
-      cursor: pointer;
-      color: #fff;
-      opacity: .5;
-      transition: opacity .15s;
-    }
+    .guide-box { background: #fff; border: 1px solid #c8ddc8; border-radius: 10px; padding: 16px; }
+    .guide-tabs { display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; }
+    .guide-tab { padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 700; border: none; cursor: pointer; color: #fff; opacity: .5; transition: opacity .15s; }
     .guide-tab.active { opacity: 1; }
     .guide-tab.gt1 { background: #1a5c2a; }
     .guide-tab.gt2 { background: #1565c0; }
@@ -291,174 +210,48 @@
     .guide-panel.active { display: block; }
     .guide-panel ol { padding-left: 20px; }
     .guide-panel li { margin-bottom: 5px; }
-    code {
-      background: #f0f5f0;
-      border-radius: 4px;
-      padding: 1px 6px;
-      font-size: 12px;
-      font-family: Consolas, monospace;
-      color: #1a5c2a;
-    }
+    code { background: #f0f5f0; border-radius: 4px; padding: 1px 6px; font-size: 12px; font-family: Consolas, monospace; color: #1a5c2a; }
 
     /* ── Dashboard ── */
     #view-dashboard { display: none; padding: 20px; }
-    .db-summary-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 14px;
-      margin-bottom: 24px;
-    }
-    .db-card {
-      background: #fff;
-      border: 1px solid #d8e8d8;
-      border-radius: 10px;
-      padding: 16px 14px;
-      text-align: center;
-    }
-    .db-card .db-num {
-      font-size: 32px;
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 4px;
-    }
-    .db-card .db-label {
-      font-size: 12px;
-      color: #666;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .4px;
-    }
-    .db-card.c-total  .db-num { color: #1565c0; }
-    .db-card.c-pass   .db-num { color: #1e7a28; }
-    .db-card.c-fail   .db-num { color: #b82828; }
-    .db-card.c-wait   .db-num { color: #e65100; }
-    .db-card.c-sent   .db-num { color: #6a1b9a; }
-    .db-card.c-done   .db-num { color: #1b5e20; }
-
-    .db-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
+    .db-summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; margin-bottom: 24px; }
+    .db-card { background: #fff; border: 1px solid #d8e8d8; border-radius: 10px; padding: 16px 14px; text-align: center; }
+    .db-card .db-num { font-size: 32px; font-weight: 800; line-height: 1.1; margin-bottom: 4px; }
+    .db-card .db-label { font-size: 12px; color: #666; font-weight: 600; text-transform: uppercase; letter-spacing: .4px; }
+    .db-card.c-total .db-num { color: #1565c0; }
+    .db-card.c-pass  .db-num { color: #1e7a28; }
+    .db-card.c-fail  .db-num { color: #b82828; }
+    .db-card.c-wait  .db-num { color: #e65100; }
+    .db-card.c-sent  .db-num { color: #6a1b9a; }
+    .db-card.c-done  .db-num { color: #1b5e20; }
+    .db-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
     @media (max-width: 640px) { .db-row { grid-template-columns: 1fr; } }
-
-    .db-panel {
-      background: #fff;
-      border: 1px solid #d8e8d8;
-      border-radius: 10px;
-      padding: 16px;
-    }
-    .db-panel h3 {
-      font-size: 13px;
-      font-weight: 700;
-      color: #444;
-      margin-bottom: 14px;
-      text-transform: uppercase;
-      letter-spacing: .4px;
-    }
-
-    /* donut chart */
-    .donut-wrap {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+    .db-panel { background: #fff; border: 1px solid #d8e8d8; border-radius: 10px; padding: 16px; }
+    .db-panel h3 { font-size: 13px; font-weight: 700; color: #444; margin-bottom: 14px; text-transform: uppercase; letter-spacing: .4px; }
+    .donut-wrap { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
     .donut-wrap canvas { flex-shrink: 0; }
     .donut-legend { flex: 1; min-width: 120px; }
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      margin-bottom: 8px;
-    }
-    .legend-dot {
-      width: 12px; height: 12px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
+    .legend-item { display: flex; align-items: center; gap: 8px; font-size: 13px; margin-bottom: 8px; }
+    .legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
     .legend-label { color: #444; }
     .legend-val   { margin-left: auto; font-weight: 700; color: #222; }
-
-    /* bar chart */
     .bar-list { display: flex; flex-direction: column; gap: 10px; }
-    .bar-item {}
-    .bar-meta {
-      display: flex;
-      justify-content: space-between;
-      font-size: 12px;
-      color: #555;
-      margin-bottom: 4px;
-    }
-    .bar-track {
-      background: #f0f5f0;
-      border-radius: 4px;
-      height: 10px;
-      overflow: hidden;
-    }
-    .bar-fill {
-      height: 100%;
-      border-radius: 4px;
-      transition: width .4s ease;
-    }
-
-    /* recent list */
+    .bar-meta { display: flex; justify-content: space-between; font-size: 12px; color: #555; margin-bottom: 4px; }
+    .bar-track { background: #f0f5f0; border-radius: 4px; height: 10px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 4px; transition: width .4s ease; }
     .recent-list { display: flex; flex-direction: column; gap: 0; }
-    .recent-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 9px 0;
-      border-bottom: 1px solid #f0f5f0;
-      font-size: 13px;
-    }
+    .recent-item { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #f0f5f0; font-size: 13px; }
     .recent-item:last-child { border-bottom: none; }
     .recent-cid { font-weight: 700; color: #1a5c2a; flex: 1; }
     .recent-time { font-size: 11px; color: #aaa; white-space: nowrap; }
-    .status-pill {
-      font-size: 11px;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 12px;
-      white-space: nowrap;
-    }
+    .status-pill { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 12px; white-space: nowrap; }
     .pill-wait { background: #fff3e0; color: #bf360c; }
     .pill-sent { background: #f3e5f5; color: #4a148c; }
     .pill-done { background: #e8f5e9; color: #1b5e20; }
     .pill-none { background: #f5f5f5; color: #888; }
-
-    /* gap badge สำหรับ fail section */
-    .gap-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: #fff8e1;
-      border: 1px solid #ffe082;
-      border-radius: 6px;
-      padding: 4px 10px;
-      font-size: 12px;
-      font-weight: 700;
-      color: #e65100;
-      white-space: nowrap;
-    }
+    .gap-badge { display: inline-flex; align-items: center; gap: 5px; background: #fff8e1; border: 1px solid #ffe082; border-radius: 6px; padding: 4px 10px; font-size: 12px; font-weight: 700; color: #e65100; white-space: nowrap; }
     .gap-badge .gap-icon { font-size: 13px; }
-
-    /* status indicator in toast */
-    #toast {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #1a5c2a;
-      color: #fff;
-      padding: 10px 18px;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 700;
-      display: none;
-      z-index: 999;
-    }
+    #toast { position: fixed; bottom: 20px; right: 20px; background: #1a5c2a; color: #fff; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 700; display: none; z-index: 999; }
   </style>
 </head>
 <body>
@@ -482,16 +275,12 @@
 
 <!-- ═══ VIEW: LIST ═══ -->
 <div id="view-list">
-
-  <!-- Main 2 tabs -->
   <div class="main-tab-outer">
     <div class="main-tab-row">
       <button class="main-tab active-pass" id="mainTabPass" onclick="setMainTab('pass')">✅ ผ่านเกณฑ์</button>
       <button class="main-tab" id="mainTabFail" onclick="setMainTab('fail')">❌ ยังไม่ผ่านเกณฑ์</button>
     </div>
   </div>
-
-  <!-- Sub filter tabs (pass only) -->
   <div class="tab-row" id="sub-tab-row">
     <button class="tab t-all active" onclick="setTab('all',this)">ทั้งหมด</button>
     <button class="tab t-wait"       onclick="setTab('wait',this)">รอดำเนินการ</button>
@@ -527,11 +316,11 @@
       <table style="width:100%;table-layout:fixed;border-collapse:collapse;">
         <thead>
           <tr>
-            <th style="width:36px;padding:9px 12px;text-align:left;font-size:13px;font-weight:800;color:#b71c1c;background:#fff;border:none;border-bottom:none;overflow:hidden;white-space:nowrap;"></th>
-            <th style="padding:9px 12px;text-align:left;font-size:13px;font-weight:800;color:#b71c1c;background:#fff;border:none;border-bottom:none;overflow:hidden;white-space:nowrap;">Customer ID</th>
-            <th style="width:140px;padding:9px 12px;text-align:right;font-size:13px;font-weight:800;color:#b71c1c;background:#fff;border:none;border-bottom:none;overflow:hidden;white-space:nowrap;">Total Import</th>
-            <th style="width:140px;padding:9px 12px;text-align:right;font-size:13px;font-weight:800;color:#b71c1c;background:#fff;border:none;border-bottom:none;overflow:hidden;white-space:nowrap;">Sum Total</th>
-            <th style="width:235px;padding:9px 12px;text-align:left;font-size:13px;font-weight:800;color:#b71c1c;background:#fff;border:none;border-bottom:none;overflow:hidden;white-space:nowrap;">🎯 ขาดอีกกี่บาทถึงเกณฑ์</th>
+            <th style="width:36px;padding:9px 12px;text-align:left;font-size:13px;font-weight:800;color:#b71c1c;background:#fff;border:none;overflow:hidden;white-space:nowrap;"></th>
+            <th style="padding:9px 12px;text-align:left;font-size:13px;font-weight:800;color:#b71c1c;background:#fff;border:none;overflow:hidden;white-space:nowrap;">Customer ID</th>
+            <th style="width:140px;padding:9px 12px;text-align:right;font-size:13px;font-weight:800;color:#b71c1c;background:#fff;border:none;overflow:hidden;white-space:nowrap;">Total Import</th>
+            <th style="width:140px;padding:9px 12px;text-align:right;font-size:13px;font-weight:800;color:#b71c1c;background:#fff;border:none;overflow:hidden;white-space:nowrap;">Sum Total</th>
+            <th style="width:235px;padding:9px 12px;text-align:left;font-size:13px;font-weight:800;color:#b71c1c;background:#fff;border:none;overflow:hidden;white-space:nowrap;">🎯 ขาดอีกกี่บาทถึงเกณฑ์</th>
           </tr>
         </thead>
         <tbody id="fail-body"></tbody>
@@ -539,8 +328,7 @@
     </div>
     <div class="pagination" id="fail-pg"></div>
   </div>
-
-</div><!-- end view-list -->
+</div>
 
 <!-- ═══ VIEW: GUIDE ═══ -->
 <div id="view-guide">
@@ -551,7 +339,6 @@
       <button class="guide-tab gt3"         onclick="showGuide(2,this)">🎟 จัดการคูปอง</button>
       <button class="guide-tab gt4"         onclick="showGuide(3,this)">❓ แก้ปัญหา</button>
     </div>
-
     <div class="guide-panel active" id="gp0">
       <ol>
         <li>เปิด Chrome → ไปที่ <code>chrome://extensions</code></li>
@@ -565,7 +352,7 @@
       <ol>
         <li>เปิดหน้า Invoice บน <code>jawanda-app.com</code></li>
         <li>คลิกไอคอน Extension → กด <strong>📥 ดึงข้อมูลจากหน้านี้</strong></li>
-        <li>ระบบกรองอัตโนมัติ: วันที่ ≥ 01/05/2026, Sum Total ≥ 4,900 บาท</li>
+        <li>ระบบกรองอัตโนมัติ: วันที่ ≥ 01/05/2026</li>
         <li>ตรวจสอบ Preview ในป๊อปอัพ แล้วกด <strong>✅ ส่งเข้า Sheets</strong></li>
         <li>ข้อมูลจะเพิ่มลง Google Sheets โดยไม่มีรายการซ้ำ</li>
       </ol>
@@ -582,10 +369,9 @@
     <div class="guide-panel" id="gp3">
       <ol>
         <li><strong>ไม่พบ table:</strong> ตรวจสอบว่าเปิดหน้า Invoice ก่อนกด Fetch</li>
-        <li><strong>Sum Total = 1:</strong> อัพเดท <code>content_script.js</code> ให้เป็นเวอร์ชันล่าสุด</li>
+        <li><strong>Sync ไม่ได้:</strong> ตรวจสอบว่า Deploy Apps Script เป็น New version แล้ว</li>
         <li><strong>ส่ง Sheets ไม่สำเร็จ:</strong> ตรวจสอบ <code>APPS_SCRIPT_URL</code> ใน popup.js</li>
         <li><strong>Extension ไม่อัพเดท:</strong> กด Reload ใน chrome://extensions</li>
-        <li><strong>ไฟล์ไม่อัพเดท:</strong> ตรวจสอบว่าแก้ไขไฟล์ในโฟลเดอร์ที่ Extension โหลดอยู่</li>
       </ol>
     </div>
   </div>
@@ -593,38 +379,15 @@
 
 <!-- ═══ VIEW: DASHBOARD ═══ -->
 <div id="view-dashboard">
-
-  <!-- Summary Cards -->
   <div class="db-summary-grid">
-    <div class="db-card c-total">
-      <div class="db-num" id="db-total">—</div>
-      <div class="db-label">ลูกค้าทั้งหมด</div>
-    </div>
-    <div class="db-card c-pass">
-      <div class="db-num" id="db-pass">—</div>
-      <div class="db-label">ผ่านเกณฑ์</div>
-    </div>
-    <div class="db-card c-fail">
-      <div class="db-num" id="db-notpass">—</div>
-      <div class="db-label">ยังไม่ผ่าน</div>
-    </div>
-    <div class="db-card c-wait">
-      <div class="db-num" id="db-wait">—</div>
-      <div class="db-label">รอดำเนินการ</div>
-    </div>
-    <div class="db-card c-sent">
-      <div class="db-num" id="db-sent">—</div>
-      <div class="db-label">ส่งแล้ว-ยังไม่ใช้</div>
-    </div>
-    <div class="db-card c-done">
-      <div class="db-num" id="db-done">—</div>
-      <div class="db-label">จัดส่งเรียบร้อย</div>
-    </div>
+    <div class="db-card c-total"><div class="db-num" id="db-total">—</div><div class="db-label">ลูกค้าทั้งหมด</div></div>
+    <div class="db-card c-pass"> <div class="db-num" id="db-pass">—</div> <div class="db-label">ผ่านเกณฑ์</div></div>
+    <div class="db-card c-fail"> <div class="db-num" id="db-notpass">—</div><div class="db-label">ยังไม่ผ่าน</div></div>
+    <div class="db-card c-wait"> <div class="db-num" id="db-wait">—</div> <div class="db-label">รอดำเนินการ</div></div>
+    <div class="db-card c-sent"> <div class="db-num" id="db-sent">—</div> <div class="db-label">ส่งแล้ว-ยังไม่ใช้</div></div>
+    <div class="db-card c-done"> <div class="db-num" id="db-done">—</div> <div class="db-label">จัดส่งเรียบร้อย</div></div>
   </div>
-
-  <!-- Chart row -->
   <div class="db-row">
-    <!-- Donut chart -->
     <div class="db-panel">
       <h3>สัดส่วนคูปอง</h3>
       <div class="donut-wrap">
@@ -632,52 +395,38 @@
         <div class="donut-legend" id="donutLegend"></div>
       </div>
     </div>
-
-    <!-- Bar chart (status breakdown) -->
     <div class="db-panel">
       <h3>สถานะคูปอง (เฉพาะผ่านเกณฑ์)</h3>
       <div class="bar-list" id="barList"></div>
     </div>
   </div>
-
-  <!-- Recent updates (full width) -->
   <div class="db-panel">
     <h3>อัพเดทล่าสุด</h3>
     <div class="recent-list" id="recentList"></div>
   </div>
+</div>
 
-</div><!-- end view-dashboard -->
-
-<!-- Toast -->
 <div id="toast"></div>
 
 <script>
-// ── Config ──
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxnb_gYk1c2xVvoX40N1Bd6DV9diH_rjf6pkGHnFhKpFV65oHH5mIKV7rIBnUffW1Cybg/exec";
 
-// ── Mock data (replace with real Sheets fetch) ──
 const RAW_DATA = [
-  {invoiceNumber:"IJWD/AMRON19-2605231144", billDate:"23/05/2026", totalImport:10084.84, sumTotal:10084.84, eligible:true,  couponStatus:"รอดำเนินการ"},
-  {invoiceNumber:"IJWD/AMRON19-2605241200", billDate:"24/05/2026", totalImport:3200.00,  sumTotal:3200.00,  eligible:false, couponStatus:""},
-  {invoiceNumber:"IJWD/SIRIN22-2605201050", billDate:"20/05/2026", totalImport:7088.74,  sumTotal:7088.74,  eligible:true,  couponStatus:"ส่งแล้ว-ยังไม่ใช้"},
-  {invoiceNumber:"IJWD/SIRIN22-2605210930", billDate:"21/05/2026", totalImport:1500.00,  sumTotal:1500.00,  eligible:false, couponStatus:""},
-  {invoiceNumber:"IJWD/KAEW01-2605151400",  billDate:"15/05/2026", totalImport:5500.00,  sumTotal:5500.00,  eligible:true,  couponStatus:"จัดส่งเรียบร้อย"},
-  {invoiceNumber:"IJWD/NONG55-2605181120",  billDate:"18/05/2026", totalImport:2100.00,  sumTotal:2100.00,  eligible:false, couponStatus:""},
-  {invoiceNumber:"IJWD/NONG55-2605192230",  billDate:"19/05/2026", totalImport:3500.00,  sumTotal:3500.00,  eligible:false, couponStatus:""},
-  {invoiceNumber:"IJWD/MANEE10-2605221630", billDate:"22/05/2026", totalImport:9200.00,  sumTotal:9200.00,  eligible:true,  couponStatus:"รอดำเนินการ"},
-  {invoiceNumber:"IJWD/PING77-2605201000",  billDate:"20/05/2026", totalImport:800.00,   sumTotal:800.00,   eligible:false, couponStatus:""},
-  {invoiceNumber:"IJWD/LERT33-2605251445",  billDate:"25/05/2026", totalImport:6300.00,  sumTotal:6300.00,  eligible:true,  couponStatus:""},
+  {invoiceNumber:"IJWD/AMRON19-2605231144", billDate:"23/05/2026", totalImport:10084.84, sumTotal:10084.84, couponStatus:"รอดำเนินการ"},
+  {invoiceNumber:"IJWD/SIRIN22-2605201050", billDate:"20/05/2026", totalImport:7088.74,  sumTotal:7088.74,  couponStatus:"ส่งแล้ว-ยังไม่ใช้"},
+  {invoiceNumber:"IJWD/KAEW01-2605151400",  billDate:"15/05/2026", totalImport:5500.00,  sumTotal:5500.00,  couponStatus:"จัดส่งเรียบร้อย"},
+  {invoiceNumber:"IJWD/NONG55-2605181120",  billDate:"18/05/2026", totalImport:2100.00,  sumTotal:2100.00,  couponStatus:""},
+  {invoiceNumber:"IJWD/NONG55-2605192230",  billDate:"19/05/2026", totalImport:3500.00,  sumTotal:3500.00,  couponStatus:""},
+  {invoiceNumber:"IJWD/MANEE10-2605221630", billDate:"22/05/2026", totalImport:9200.00,  sumTotal:9200.00,  couponStatus:"รอดำเนินการ"},
+  {invoiceNumber:"IJWD/PING77-2605201000",  billDate:"20/05/2026", totalImport:800.00,   sumTotal:800.00,   couponStatus:""},
+  {invoiceNumber:"IJWD/LERT33-2605251445",  billDate:"25/05/2026", totalImport:6300.00,  sumTotal:6300.00,  couponStatus:""},
 ];
 
-// ── State ──
-let allGroups = [];
-let expanded  = {};
-let currentTab  = "all";   // sub-filter inside pass tab
-let currentMain = "pass";  // pass | fail
+let allGroups = [], expanded = {};
+let currentTab = "all", currentMain = "pass";
 let passPage = 1, failPage = 1;
 const PER_PAGE = 20;
 
-// ── Helpers ──
 function extractCusId(inv) {
   const m = inv.match(/^I?(JWD\/[^-]+)/);
   return m ? m[1] : inv;
@@ -687,11 +436,9 @@ function groupData(rows) {
   const map = {};
   rows.forEach(r => {
     const cid = extractCusId(r.invoiceNumber);
-    if (!map[cid]) {
-      map[cid] = { cusId: cid, totalImport: 0, sumTotal: 0, eligible: false, couponStatus: r.couponStatus || "", updatedBy: r.updatedBy || "", bills: [] };
-    }
-    map[cid].totalImport += r.totalImport;
-    map[cid].sumTotal    += r.sumTotal;
+    if (!map[cid]) map[cid] = { cusId: cid, totalImport: 0, sumTotal: 0, eligible: false, couponStatus: r.couponStatus || "", updatedBy: r.updatedBy || "", bills: [] };
+    map[cid].totalImport += Number(r.totalImport) || 0;
+    map[cid].sumTotal    += Number(r.sumTotal)    || 0;
     map[cid].bills.push(r);
     if (r.couponStatus) map[cid].couponStatus = r.couponStatus;
     if (r.updatedBy)    map[cid].updatedBy    = r.updatedBy;
@@ -700,25 +447,19 @@ function groupData(rows) {
   return Object.values(map);
 }
 
-function fmt(n) {
-  return n.toLocaleString("th-TH", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-}
-
+function fmt(n) { return Number(n).toLocaleString("th-TH", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
 function statusClass(s) {
   if (s === "รอดำเนินการ")       return "s-wait";
   if (s === "ส่งแล้ว-ยังไม่ใช้") return "s-sent";
   if (s === "จัดส่งเรียบร้อย")    return "s-done";
   return "s-none";
 }
-
 function showToast(msg) {
   const t = document.getElementById("toast");
-  t.textContent = msg;
-  t.style.display = "block";
-  setTimeout(() => { t.style.display = "none"; }, 2500);
+  t.textContent = msg; t.style.display = "block";
+  setTimeout(() => { t.style.display = "none"; }, 3000);
 }
 
-// ── Filter logic ──
 function getPassGroups() {
   let g = allGroups.filter(x => x.eligible);
   if (currentTab === "wait") g = g.filter(x => x.couponStatus === "รอดำเนินการ");
@@ -726,64 +467,46 @@ function getPassGroups() {
   if (currentTab === "done") g = g.filter(x => x.couponStatus === "จัดส่งเรียบร้อย");
   return g;
 }
+function getFailGroups() { return allGroups.filter(x => !x.eligible); }
 
-function getFailGroups() {
-  return allGroups.filter(x => !x.eligible);
-}
-
-// ── Render ──
 function renderSection(groups, bodyId, pgId, page, pgSetter) {
   const isPass = bodyId === "pass-body";
   const total  = groups.length;
   const slice  = groups.slice((page - 1) * PER_PAGE, page * PER_PAGE);
-
   let html = "";
   slice.forEach((g, idx) => {
-    const rid   = g.cusId.replace(/\//g, "_").replace(/\s/g, "");
+    const rid = g.cusId.replace(/\//g, "_").replace(/\s/g, "");
     const isExp = !!expanded[rid];
     const adminClass = g.updatedBy === "Sirirwan" ? "a-sirirwan" : g.updatedBy === "Kanis" ? "a-kanis" : "a-none";
-    const rowBg = isPass
-      ? (idx % 2 === 0 ? "#fff" : "#f0faf0")
-      : (idx % 2 === 0 ? "#fff" : "#fff5f5");
-
+    const rowBg = isPass ? (idx % 2 === 0 ? "#fff" : "#f0faf0") : (idx % 2 === 0 ? "#fff" : "#fff5f5");
     html += `<tr style="background:${rowBg};">
       <td><button class="expand-btn" onclick="toggleExpand('${rid}')">${isExp ? "▼" : "▶"}</button></td>
       <td><span class="cus-id">${g.cusId}</span><span class="bill-count">(${g.bills.length} บิล)</span></td>
       <td class="r">${fmt(g.totalImport)}</td>
       <td class="r sum-val">${fmt(g.sumTotal)}</td>
       <td>`;
-
     if (isPass) {
       html += `<select class="status-sel ${statusClass(g.couponStatus)}" onchange="updateStatus('${g.cusId}',this)">
         <option value="">— เลือกสถานะ —</option>
-        <option value="รอดำเนินการ"       ${g.couponStatus === "รอดำเนินการ"       ? "selected" : ""}>รอดำเนินการ</option>
-        <option value="ส่งแล้ว-ยังไม่ใช้" ${g.couponStatus === "ส่งแล้ว-ยังไม่ใช้" ? "selected" : ""}>ส่งแล้ว-ยังไม่ใช้</option>
-        <option value="จัดส่งเรียบร้อย"    ${g.couponStatus === "จัดส่งเรียบร้อย"    ? "selected" : ""}>จัดส่งเรียบร้อย</option>
+        <option value="รอดำเนินการ"       ${g.couponStatus==="รอดำเนินการ"?"selected":""}>รอดำเนินการ</option>
+        <option value="ส่งแล้ว-ยังไม่ใช้" ${g.couponStatus==="ส่งแล้ว-ยังไม่ใช้"?"selected":""}>ส่งแล้ว-ยังไม่ใช้</option>
+        <option value="จัดส่งเรียบร้อย"    ${g.couponStatus==="จัดส่งเรียบร้อย"?"selected":""}>จัดส่งเรียบร้อย</option>
       </select>`;
     } else {
       const gap = Math.max(0, 4900 - g.sumTotal);
       html += `<span class="gap-badge"><span class="gap-icon">📈</span>ขาดอีก ${fmt(gap)} บาท</span>`;
     }
-
     html += `</td>`;
-
     if (isPass) {
-      html += `<td>
-        <select class="admin-sel ${adminClass}" onchange="updateAdmin('${g.cusId}',this)">
-          <option value="">👤 —</option>
-          <option value="Sirirwan" ${g.updatedBy === "Sirirwan" ? "selected" : ""}>👤 Sirirwan</option>
-          <option value="Kanis"    ${g.updatedBy === "Kanis"    ? "selected" : ""}>👤 Kanis</option>
-        </select>
-      </td>`;
-    } else {
-      html += `<td></td>`;
-    }
-
+      html += `<td><select class="admin-sel ${adminClass}" onchange="updateAdmin('${g.cusId}',this)">
+        <option value="">👤 —</option>
+        <option value="Sirirwan" ${g.updatedBy==="Sirirwan"?"selected":""}>👤 Sirirwan</option>
+        <option value="Kanis"    ${g.updatedBy==="Kanis"?"selected":""}>👤 Kanis</option>
+      </select></td>`;
+    } else { html += `<td></td>`; }
     html += `</tr>`;
-
-    // Sub rows (invoices)
-    g.bills.forEach((b, bi) => {
-      html += `<tr class="sub-row${isExp ? " show" : ""}" data-parent="${rid}">
+    g.bills.forEach(b => {
+      html += `<tr class="sub-row${isExp?" show":""}" data-parent="${rid}">
         <td></td>
         <td style="padding-left:22px;font-size:12px;color:#555;">${b.invoiceNumber}</td>
         <td class="r">${fmt(b.totalImport)}</td>
@@ -792,32 +515,23 @@ function renderSection(groups, bodyId, pgId, page, pgSetter) {
       </tr>`;
     });
   });
-
   document.getElementById(bodyId).innerHTML = html;
-
-  // Pagination
   const totalPages = Math.max(1, Math.ceil(total / PER_PAGE));
   document.getElementById(pgId).innerHTML = `
-    <button class="pg-btn" ${page <= 1 ? "disabled" : ""} onclick="${pgSetter}(${page - 1})">◀ ก่อนหน้า</button>
+    <button class="pg-btn" ${page<=1?"disabled":""} onclick="${pgSetter}(${page-1})">◀ ก่อนหน้า</button>
     <span class="pg-info">หน้า ${page} / ${totalPages} · รวม ${total} รายการ</span>
-    <button class="pg-btn" ${page >= totalPages ? "disabled" : ""} onclick="${pgSetter}(${page + 1})">ถัดไป ▶</button>
-  `;
+    <button class="pg-btn" ${page>=totalPages?"disabled":""} onclick="${pgSetter}(${page+1})">ถัดไป ▶</button>`;
 }
 
 function render() {
-  const passSec   = document.getElementById("pass-section");
-  const failSec   = document.getElementById("fail-section");
+  const passSec = document.getElementById("pass-section");
+  const failSec = document.getElementById("fail-section");
   const subTabRow = document.getElementById("sub-tab-row");
-
   if (currentMain === "pass") {
-    passSec.style.display   = "block";
-    failSec.style.display   = "none";
-    subTabRow.style.display = "flex";
+    passSec.style.display = "block"; failSec.style.display = "none"; subTabRow.style.display = "flex";
     renderSection(getPassGroups(), "pass-body", "pass-pg", passPage, "setPassPage");
   } else {
-    passSec.style.display   = "none";
-    failSec.style.display   = "block";
-    subTabRow.style.display = "none";
+    passSec.style.display = "none"; failSec.style.display = "block"; subTabRow.style.display = "none";
     renderSection(getFailGroups(), "fail-body", "fail-pg", failPage, "setFailPage");
   }
 }
@@ -827,83 +541,45 @@ function setFailPage(p) { failPage = p; render(); }
 
 function toggleExpand(rid) {
   expanded[rid] = !expanded[rid];
-  // Toggle sub-rows without full re-render for performance
-  document.querySelectorAll(`[data-parent="${rid}"]`).forEach(row => {
-    row.classList.toggle("show", !!expanded[rid]);
-  });
-  // Flip the expand button text
+  document.querySelectorAll(`[data-parent="${rid}"]`).forEach(row => row.classList.toggle("show", !!expanded[rid]));
   const btn = document.querySelector(`button.expand-btn[onclick="toggleExpand('${rid}')"]`);
   if (btn) btn.textContent = expanded[rid] ? "▼" : "▶";
 }
 
-// ── Update admin → Apps Script ──
 function updateAdmin(cusId, sel) {
   const val = sel.value;
-  sel.className = "admin-sel " + (val === "Sirirwan" ? "a-sirirwan" : val === "Kanis" ? "a-kanis" : "a-none");
-
+  sel.className = "admin-sel " + (val==="Sirirwan"?"a-sirirwan":val==="Kanis"?"a-kanis":"a-none");
   const g = allGroups.find(x => x.cusId === cusId);
   if (g) g.updatedBy = val;
-
-  fetch(APPS_SCRIPT_URL, {
-    method: "POST",
-    mode: "no-cors",
-    headers: { "Content-Type": "text/plain" },
-    body: JSON.stringify({ action: "updateAdmin", cusId: cusId, updatedBy: val })
-  }).catch(() => {});
-
+  fetch(APPS_SCRIPT_URL, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain"}, body:JSON.stringify({action:"updateAdmin",cusId,updatedBy:val}) }).catch(()=>{});
   showToast("👤 บันทึกแล้ว: " + (val || "—"));
 }
 
-// ── Update status → Apps Script ──
 function updateStatus(cusId, sel) {
   const val = sel.value;
   sel.className = "status-sel " + statusClass(val);
-
-  // Update in-memory
   const g = allGroups.find(x => x.cusId === cusId);
   if (g) g.couponStatus = val;
-
-  // Send to Apps Script
-  fetch(APPS_SCRIPT_URL, {
-    method: "POST",
-    mode: "no-cors",
-    headers: { "Content-Type": "text/plain" },
-    body: JSON.stringify({ action: "updateCouponStatus", cusId: cusId, status: val })
-  }).catch(() => {});
-
+  fetch(APPS_SCRIPT_URL, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain"}, body:JSON.stringify({action:"updateCouponStatus",cusId,status:val}) }).catch(()=>{});
   showToast("✅ บันทึกสถานะแล้ว: " + (val || "—"));
 }
 
-// ── Main tab switch (pass / fail) ──
 function setMainTab(which) {
-  currentMain = which;
-  currentTab  = "all";
-  passPage    = 1;
-  failPage    = 1;
-
-  const tp = document.getElementById("mainTabPass");
-  const tf = document.getElementById("mainTabFail");
-  tp.className = "main-tab" + (which === "pass" ? " active-pass" : "");
-  tf.className = "main-tab" + (which === "fail" ? " active-fail" : "");
-
-  // Reset sub-tabs
+  currentMain = which; currentTab = "all"; passPage = 1; failPage = 1;
+  document.getElementById("mainTabPass").className = "main-tab" + (which==="pass"?" active-pass":"");
+  document.getElementById("mainTabFail").className = "main-tab" + (which==="fail"?" active-fail":"");
   document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
   const allTab = document.querySelector(".tab.t-all");
   if (allTab) allTab.classList.add("active");
-
   render();
 }
 
-// ── Sub filter tab (inside pass) ──
 function setTab(t, btn) {
-  currentTab = t;
-  passPage   = 1;
+  currentTab = t; passPage = 1;
   document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
-  btn.classList.add("active");
-  render();
+  btn.classList.add("active"); render();
 }
 
-// ── Dashboard render ──
 function renderDashboard() {
   const pass = allGroups.filter(x => x.eligible);
   const fail = allGroups.filter(x => !x.eligible);
@@ -911,120 +587,62 @@ function renderDashboard() {
   const sent = pass.filter(x => x.couponStatus === "ส่งแล้ว-ยังไม่ใช้");
   const done = pass.filter(x => x.couponStatus === "จัดส่งเรียบร้อย");
   const noStatus = pass.filter(x => !x.couponStatus);
-
-  // Summary cards
   document.getElementById("db-total").textContent  = allGroups.length;
   document.getElementById("db-pass").textContent   = pass.length;
   document.getElementById("db-notpass").textContent = fail.length;
   document.getElementById("db-wait").textContent   = wait.length;
   document.getElementById("db-sent").textContent   = sent.length;
   document.getElementById("db-done").textContent   = done.length;
-
-  // ── Donut chart (canvas) ──
   const canvas = document.getElementById("donutChart");
-  const ctx    = canvas.getContext("2d");
-  const cx = canvas.width / 2, cy = canvas.height / 2, R = 50, r = 28;
+  const ctx = canvas.getContext("2d");
+  const cx = canvas.width/2, cy = canvas.height/2, R = 50, r = 28;
   const total = allGroups.length || 1;
-  const slices = [
-    { val: pass.length, color: "#1e7a28", label: "ผ่านเกณฑ์" },
-    { val: fail.length, color: "#b82828", label: "ยังไม่ผ่าน" },
-  ];
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  let angle = -Math.PI / 2;
+  const slices = [{val:pass.length,color:"#1e7a28",label:"ผ่านเกณฑ์"},{val:fail.length,color:"#b82828",label:"ยังไม่ผ่าน"}];
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  let angle = -Math.PI/2;
   slices.forEach(s => {
-    const sweep = (s.val / total) * 2 * Math.PI;
-    ctx.beginPath();
-    ctx.moveTo(cx, cy);
-    ctx.arc(cx, cy, R, angle, angle + sweep);
-    ctx.closePath();
-    ctx.fillStyle = s.color;
-    ctx.fill();
-    angle += sweep;
+    const sweep = (s.val/total)*2*Math.PI;
+    ctx.beginPath(); ctx.moveTo(cx,cy); ctx.arc(cx,cy,R,angle,angle+sweep); ctx.closePath();
+    ctx.fillStyle = s.color; ctx.fill(); angle += sweep;
   });
-  // donut hole
-  ctx.beginPath();
-  ctx.arc(cx, cy, r, 0, 2 * Math.PI);
-  ctx.fillStyle = "#fff";
-  ctx.fill();
-  // centre text
-  ctx.fillStyle = "#222";
-  ctx.font = "bold 18px Segoe UI, sans-serif";
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
-  ctx.fillText(allGroups.length, cx, cy - 6);
-  ctx.font = "11px Segoe UI, sans-serif";
-  ctx.fillStyle = "#888";
-  ctx.fillText("ลูกค้า", cx, cy + 10);
-
-  // Legend
-  document.getElementById("donutLegend").innerHTML = slices.map(s => `
-    <div class="legend-item">
-      <div class="legend-dot" style="background:${s.color}"></div>
-      <span class="legend-label">${s.label}</span>
-      <span class="legend-val">${s.val} คน</span>
-    </div>
-  `).join("") + `
+  ctx.beginPath(); ctx.arc(cx,cy,r,0,2*Math.PI); ctx.fillStyle="#fff"; ctx.fill();
+  ctx.fillStyle="#222"; ctx.font="bold 18px Segoe UI,sans-serif"; ctx.textAlign="center"; ctx.textBaseline="middle";
+  ctx.fillText(allGroups.length,cx,cy-6); ctx.font="11px Segoe UI,sans-serif"; ctx.fillStyle="#888"; ctx.fillText("ลูกค้า",cx,cy+10);
+  document.getElementById("donutLegend").innerHTML = slices.map(s=>`
+    <div class="legend-item"><div class="legend-dot" style="background:${s.color}"></div>
+    <span class="legend-label">${s.label}</span><span class="legend-val">${s.val} คน</span></div>`).join("")+`
     <div class="legend-item" style="margin-top:8px;border-top:1px solid #eee;padding-top:8px">
-      <div class="legend-dot" style="background:#ccc"></div>
-      <span class="legend-label" style="color:#aaa">Pass rate</span>
-      <span class="legend-val" style="color:#1e7a28">${total > 0 ? Math.round(pass.length/total*100) : 0}%</span>
-    </div>
-  `;
-
-  // ── Bar chart — coupon status breakdown (pass only) ──
+    <div class="legend-dot" style="background:#ccc"></div>
+    <span class="legend-label" style="color:#aaa">Pass rate</span>
+    <span class="legend-val" style="color:#1e7a28">${Math.round(pass.length/total*100)}%</span></div>`;
   const barData = [
-    { label: "รอดำเนินการ",       count: wait.length,     color: "#e65100", bg: "#fff3e0" },
-    { label: "ส่งแล้ว-ยังไม่ใช้", count: sent.length,     color: "#6a1b9a", bg: "#f3e5f5" },
-    { label: "จัดส่งเรียบร้อย",    count: done.length,     color: "#1b5e20", bg: "#e8f5e9" },
-    { label: "ยังไม่ระบุสถานะ",    count: noStatus.length, color: "#bbb",    bg: "#f5f5f5" },
+    {label:"รอดำเนินการ",count:wait.length,color:"#e65100",bg:"#fff3e0"},
+    {label:"ส่งแล้ว-ยังไม่ใช้",count:sent.length,color:"#6a1b9a",bg:"#f3e5f5"},
+    {label:"จัดส่งเรียบร้อย",count:done.length,color:"#1b5e20",bg:"#e8f5e9"},
+    {label:"ยังไม่ระบุสถานะ",count:noStatus.length,color:"#bbb",bg:"#f5f5f5"},
   ];
-  const maxVal = Math.max(...barData.map(b => b.count), 1);
-  document.getElementById("barList").innerHTML = barData.map(b => `
-    <div class="bar-item">
-      <div class="bar-meta">
-        <span>${b.label}</span>
-        <span style="font-weight:700;color:${b.color}">${b.count} คน</span>
-      </div>
-      <div class="bar-track" style="background:${b.bg}">
-        <div class="bar-fill" style="width:${Math.round(b.count/maxVal*100)}%;background:${b.color}"></div>
-      </div>
-    </div>
-  `).join("");
-
-  // ── Recent updated — last 8 with non-empty status, newest first ──
-  const withStatus = allGroups
-    .filter(x => x.eligible && x.couponStatus)
-    .slice(-8).reverse();
-
-  const pillClass = s =>
-    s === "รอดำเนินการ"       ? "pill-wait" :
-    s === "ส่งแล้ว-ยังไม่ใช้" ? "pill-sent" :
-    s === "จัดส่งเรียบร้อย"    ? "pill-done" : "pill-none";
-
+  const maxVal = Math.max(...barData.map(b=>b.count),1);
+  document.getElementById("barList").innerHTML = barData.map(b=>`
+    <div class="bar-item"><div class="bar-meta"><span>${b.label}</span><span style="font-weight:700;color:${b.color}">${b.count} คน</span></div>
+    <div class="bar-track" style="background:${b.bg}"><div class="bar-fill" style="width:${Math.round(b.count/maxVal*100)}%;background:${b.color}"></div></div></div>`).join("");
+  const withStatus = allGroups.filter(x=>x.eligible&&x.couponStatus).slice(-8).reverse();
+  const pillClass = s => s==="รอดำเนินการ"?"pill-wait":s==="ส่งแล้ว-ยังไม่ใช้"?"pill-sent":s==="จัดส่งเรียบร้อย"?"pill-done":"pill-none";
   document.getElementById("recentList").innerHTML = withStatus.length
-    ? withStatus.map((g, i) => `
-        <div class="recent-item">
-          <div class="recent-cid">${g.cusId}</div>
-          <span class="status-pill ${pillClass(g.couponStatus)}">${g.couponStatus}</span>
-          <span class="recent-time">รายการที่ ${withStatus.length - i}</span>
-        </div>
-      `).join("")
+    ? withStatus.map((g,i)=>`<div class="recent-item"><div class="recent-cid">${g.cusId}</div>
+        <span class="status-pill ${pillClass(g.couponStatus)}">${g.couponStatus}</span>
+        <span class="recent-time">รายการที่ ${withStatus.length-i}</span></div>`).join("")
     : `<div style="color:#aaa;font-size:13px;padding:12px 0">ยังไม่มีการอัพเดทสถานะ</div>`;
 }
 
-// ── View switch ──
 function showView(v) {
-  document.getElementById("view-list").style.display      = v === "list"      ? "block" : "none";
-  document.getElementById("view-guide").style.display     = v === "guide"     ? "block" : "none";
-  document.getElementById("view-dashboard").style.display = v === "dashboard" ? "block" : "none";
-  if (v === "dashboard") renderDashboard();
+  document.getElementById("view-list").style.display      = v==="list"      ? "block":"none";
+  document.getElementById("view-guide").style.display     = v==="guide"     ? "block":"none";
+  document.getElementById("view-dashboard").style.display = v==="dashboard" ? "block":"none";
+  if (v==="dashboard") renderDashboard();
 }
 
-// ── Guide tabs ──
 function showGuide(idx, btn) {
-  document.querySelectorAll(".guide-panel").forEach((el, i) => {
-    el.classList.toggle("active", i === idx);
-  });
+  document.querySelectorAll(".guide-panel").forEach((el,i) => el.classList.toggle("active", i===idx));
   document.querySelectorAll(".guide-tab").forEach(b => b.classList.remove("active"));
   btn.classList.add("active");
 }
@@ -1032,13 +650,10 @@ function showGuide(idx, btn) {
 // ── Sync from Sheets (JSONP — แก้ CORS) ──
 function syncData() {
   showToast("🔄 กำลัง Sync...");
-
-  const cbName = "jwdCallback_" + Date.now();
-
+  const cbName = "jwdCb_" + Date.now();
   window[cbName] = function(res) {
     delete window[cbName];
-    document.getElementById("jsonp-script")?.remove();
-
+    document.getElementById("_jwdScript")?.remove();
     const rows = res.invoices || res.data || [];
     if (rows.length > 0) {
       allGroups = groupData(rows);
@@ -1049,16 +664,11 @@ function syncData() {
       showToast("⚠️ ไม่พบข้อมูลใน Sheets");
     }
   };
-
-  const script = document.createElement("script");
-  script.id  = "jsonp-script";
-  script.src = APPS_SCRIPT_URL + "?action=getInvoices&callback=" + cbName;
-  script.onerror = function() {
-    delete window[cbName];
-    script.remove();
-    showToast("❌ เชื่อมต่อ Sheets ไม่ได้");
-  };
-  document.head.appendChild(script);
+  const s = document.createElement("script");
+  s.id  = "_jwdScript";
+  s.src = APPS_SCRIPT_URL + "?action=getInvoices&callback=" + cbName;
+  s.onerror = function() { delete window[cbName]; s.remove(); showToast("❌ เชื่อมต่อ Sheets ไม่ได้"); };
+  document.head.appendChild(s);
 }
 
 // ── Init ──
