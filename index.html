@@ -1029,25 +1029,36 @@ function showGuide(idx, btn) {
   btn.classList.add("active");
 }
 
-// ── Sync from Sheets ──
+// ── Sync from Sheets (JSONP — แก้ CORS) ──
 function syncData() {
   showToast("🔄 กำลัง Sync...");
-  fetch(APPS_SCRIPT_URL + "?action=getInvoices")
-    .then(r => r.json())
-    .then(res => {
-      const rows = res.invoices || res.data || [];
-      if (rows.length > 0) {
-        allGroups = groupData(rows);
-        expanded  = {};
-        render();
-        showToast("✅ Sync สำเร็จ " + rows.length + " รายการ");
-      } else {
-        showToast("⚠️ ไม่พบข้อมูลจาก Sheets");
-      }
-    })
-    .catch(() => {
-      showToast("❌ เชื่อมต่อ Sheets ไม่ได้ — ตรวจสอบ Apps Script URL");
-    });
+
+  const cbName = "jwdCallback_" + Date.now();
+
+  window[cbName] = function(res) {
+    delete window[cbName];
+    document.getElementById("jsonp-script")?.remove();
+
+    const rows = res.invoices || res.data || [];
+    if (rows.length > 0) {
+      allGroups = groupData(rows);
+      expanded  = {};
+      render();
+      showToast("✅ Sync สำเร็จ " + rows.length + " รายการ");
+    } else {
+      showToast("⚠️ ไม่พบข้อมูลใน Sheets");
+    }
+  };
+
+  const script = document.createElement("script");
+  script.id  = "jsonp-script";
+  script.src = APPS_SCRIPT_URL + "?action=getInvoices&callback=" + cbName;
+  script.onerror = function() {
+    delete window[cbName];
+    script.remove();
+    showToast("❌ เชื่อมต่อ Sheets ไม่ได้");
+  };
+  document.head.appendChild(script);
 }
 
 // ── Init ──
